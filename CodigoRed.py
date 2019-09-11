@@ -19,7 +19,7 @@ dataset = pd.read_csv('TSLA.csv')
 #dataset = pd.read_csv('AMZN.csv')
 #dataset = pd.read_csv('FB.csv')
 #dataset = pd.read_csv('NVDA.csv')
-#dataset = dataset.dropna()
+dataset = dataset.dropna()
 dataset = dataset[['Open', 'High', 'Low', 'Close']]
 
 # Crear columnas con promedios mensuales, entre otros
