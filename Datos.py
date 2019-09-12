@@ -63,6 +63,10 @@ from keras.layers import Dropout
 # Kernel_initializer → pesos con distribución uniforme.
 # activation → rectified Linear Unit function.
 # input_dim → número de entradas a la capa (número de columnas X) 
+# optimizer → extensión del gradiente en descenso estocástico.
+# loss → Pérdida a optimizar (error cuadrático medio)
+# metrics → Precisión (número de predicciones correctas / número de predicciones totales)
+# batch_size → Cantidad de datos que el modelo usa para calcular el error con los que se modifican los pesos.
 classifier = Sequential()
 classifier.add(Dense(units = 128, kernel_initializer = 'uniform', activation = 'relu', input_dim = X.shape[1]))
 classifier.add(Dense(units = 128, kernel_initializer = 'uniform', activation = 'relu'))
