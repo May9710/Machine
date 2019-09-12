@@ -59,6 +59,10 @@ from keras.layers import Dense
 from keras.layers import Dropout
 
 # Crear las capas (inicial, oculta y final)
+# units → Número de nodos en la capa.
+# Kernel_initializer → pesos con distribución uniforme.
+# activation → rectified Linear Unit function.
+# input_dim → número de entradas a la capa (número de columnas X) 
 classifier = Sequential()
 classifier.add(Dense(units = 128, kernel_initializer = 'uniform', activation = 'relu', input_dim = X.shape[1]))
 classifier.add(Dense(units = 128, kernel_initializer = 'uniform', activation = 'relu'))
