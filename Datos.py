@@ -1,18 +1,8 @@
 #!/usr/bin/env python
 # coding: utf-8
-
-# In[82]:
-
-
-#!/usr/bin/env python
-
 get_ipython().system('pip install --upgrade pip')
 get_ipython().system('pip install --upgrade tensorflow')
 get_ipython().system('pip install --upgrade keras')
-
-
-# In[1]:
-
 
 # Importar librerías
 import numpy as np
@@ -75,10 +65,6 @@ classifier.add(Dense(units = 1, kernel_initializer = 'uniform', activation = 'si
 classifier.compile(optimizer = 'adam', loss = 'mean_squared_error', metrics = ['accuracy'])
 classifier.fit(X_train, y_train, batch_size = 10, epochs = 100)
 
-
-# In[2]:
-
-
 # Predecir el precio y guardarlo en una columna de la base de datos original
 y_pred = classifier.predict(X_test)
 y_pred = (y_pred > 0.5)
@@ -95,10 +81,6 @@ trade_dataset['Strategy Returns'] = 0.
 trade_dataset['Strategy Returns'] = np.where(trade_dataset['y_pred'] == True, trade_dataset['Tomorrows Returns'], - trade_dataset['Tomorrows Returns'])
 trade_dataset['Cumulative Market Returns'] = np.cumsum(trade_dataset['Tomorrows Returns'])
 trade_dataset['Cumulative Strategy Returns'] = np.cumsum(trade_dataset['Strategy Returns'])
-
-
-# In[3]:
-
 
 #Gráfica comparativa
 #plt.figure(figsize=(10,5))
@@ -132,10 +114,3 @@ plt.plot(trade_dataset['Cumulative Strategy Returns'], color='c', label='Strateg
 plt.legend()
 plt.savefig('tesla.jpg')
 plt.show()
-
-
-# In[ ]:
-
-
-
-
