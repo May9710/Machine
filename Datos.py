@@ -67,6 +67,7 @@ from keras.layers import Dropout
 # loss → Pérdida a optimizar (error cuadrático medio)
 # metrics → Precisión (número de predicciones correctas / número de predicciones totales)
 # batch_size → Cantidad de datos que el modelo usa para calcular el error con los que se modifican los pesos.
+# epochs → Número de épocas (veces que se realiza el entrenamiento del modelo en el conjunto de datos)
 classifier = Sequential()
 classifier.add(Dense(units = 128, kernel_initializer = 'uniform', activation = 'relu', input_dim = X.shape[1]))
 classifier.add(Dense(units = 128, kernel_initializer = 'uniform', activation = 'relu'))
@@ -86,6 +87,7 @@ dataset.iloc[(len(dataset) - len(y_pred)):,-1:] = y_pred
 trade_dataset = dataset.dropna()
 
 # Crear una copia de la base de datos original donde se guardan los datos de la estrategia hallada
+# Logaritmo del precio de cierre de hoy dividido por el precio de cierre de ayer.
 trade_dataset['Tomorrows Returns'] = 0.
 trade_dataset['Tomorrows Returns'] = np.log(trade_dataset['Close']/trade_dataset['Close'].shift(1))
 trade_dataset['Tomorrows Returns'] = trade_dataset['Tomorrows Returns'].shift(-1)
