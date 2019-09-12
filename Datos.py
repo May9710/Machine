@@ -53,7 +53,7 @@ from keras.layers import Dropout
 # Kernel_initializer → pesos con distribución uniforme.
 # activation → rectified Linear Unit function.
 # input_dim → número de entradas a la capa (número de columnas X) 
-# optimizer → extensión del gradiente en descenso estocástico.
+# optimizer → extensión del gradiente en descenso estocástico (reducción función de costo)
 # loss → Pérdida a optimizar (error cuadrático medio)
 # metrics → Precisión (número de predicciones correctas / número de predicciones totales)
 # batch_size → Cantidad de datos que el modelo usa para calcular el error con los que se modifican los pesos.
