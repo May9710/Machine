@@ -114,3 +114,14 @@ plt.plot(trade_dataset['Cumulative Strategy Returns'], color='c', label='Strateg
 plt.legend()
 plt.savefig('tesla.jpg')
 plt.show()
+
+inicial = 10000
+df = trade_dataset[['y_pred','Strategy Returns']]
+df = df.drop(df[df['y_pred']==False].index)
+def f(x):
+    return inicial * x
+df['Final'] = df['Strategy Returns'].apply(f)
+df['acumulado'] = np.cumsum(df['Final'])
+df = df.dropna()
+value_final = df['acumulado'].iloc[-1]
+value_final
