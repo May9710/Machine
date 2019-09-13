@@ -85,3 +85,13 @@ plt.plot(trade_dataset['Cumulative Market Returns'], color='r', label='Market Re
 plt.plot(trade_dataset['Cumulative Strategy Returns'], color='g', label='Strategy Returns')
 plt.legend()
 plt.show()
+
+#El presente codigo no es un metodo efectivo de inversion ya que genera perdidas a la hora de invertir, sin embargo presenta
+#oportunidades de entrar al mercado al contar con informacion relevante para predecir el movimiento de la tendencia, como se ve 
+#en cada uno de los resultados obtenidos, los retornos del mercado y los retornos de la estrategia del codigo coinciden en 
+#varios intervalos de tiempo la tendencia de los mismo. 
+#Al momento de realizar una inversion, no es efectivo pues no genera ganancias significativas. 
+
+
+
+
